@@ -1,0 +1,301 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta name="description"
+        content="ColorPeel: Color Prompt Learning with Diffusion Models via Color and Shape Disentanglement">
+  <meta name="keywords" content="Nerfies, D-NeRF, NeRF">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>ColorPeel</title>
+
+  <!-- Global site tag (gtag.js) - Google Analytics -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-PYVRSFMDRL"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+
+    function gtag() {
+      dataLayer.push(arguments);
+    }
+
+    gtag('js', new Date());
+
+    gtag('config', 'G-PYVRSFMDRL');
+  </script>
+
+  <link href="https://fonts.googleapis.com/css?family=Google+Sans|Noto+Sans|Castoro"
+        rel="stylesheet">
+
+  <link rel="stylesheet" href="./static/css/bulma.min.css">
+  <link rel="stylesheet" href="./static/css/bulma-carousel.min.css">
+  <link rel="stylesheet" href="./static/css/bulma-slider.min.css">
+  <link rel="stylesheet" href="./static/css/fontawesome.all.min.css">
+  <link rel="stylesheet"
+        href="https://cdn.jsdelivr.net/gh/jpswalsh/academicons@1/css/academicons.min.css">
+  <link rel="stylesheet" href="./static/css/index.css">
+  <link rel="icon" href="./static/images/internet.png">
+
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <script defer src="./static/js/fontawesome.all.min.js"></script>
+  <script src="./static/js/bulma-carousel.min.js"></script>
+  <script src="./static/js/bulma-slider.min.js"></script>
+  <script src="./static/js/index.js"></script>
+</head>
+<body>
+
+<section class="hero">
+  <div class="hero-body">
+    <div class="container is-max-desktop">
+      <div class="columns is-centered">
+        <div class="column has-text-centered">
+          <h1 class="title is-1 publication-title">ColorPeel: Color Prompt Learning with Diffusion Models via Color and Shape Disentanglement</h1>
+          <div class="is-size-5 publication-authors">
+            <span class="author-block">
+              <a href="https://scholar.google.com/citations?user=vf7PeaoAAAAJ&hl=en">Muhammad Atif Butt</a><sup>1,2</sup>,</span>
+            <span class="author-block">
+              <a href="https://scholar.google.com/citations?user=j14vd0wAAAAJ&hl=en">Kai Wang</a><sup>1</sup>,</span>
+            <span class="author-block">
+              <a href="https://scholar.google.com/citations?user=gjnuPMoAAAAJ&hl=es">Javier Vazquez-Corral</a><sup>1,2</sup>,
+            </span>
+            <span class="author-block">
+              <a href="https://scholar.google.com/citations?user=Gsw2iUEAAAAJ&hl=en">Joost Van De Weijer</a><sup>1,2</sup>
+            </span>
+          </div>
+
+          <div class="is-size-5 publication-authors">
+            <span class="author-block"><sup>1</sup>Computer Vision Center, Spain,</span>
+            <span class="author-block"><sup>2</sup>Universitat Autonoma de Barcelona</span>
+          </div>
+          <!-- <hr style="border: 1px solid #000; margin-top: 10px;"> -->
+          <p style="color: rgb(130, 130, 130); margin-top: 10px;">European Conference on Computer Vision (ECCV) 2024</p>
+
+          <div class="column has-text-centered">
+            <div class="publication-links">
+              <!-- PDF Link. -->
+              <span class="link-block">
+                <a href="https://arxiv.org/pdf/2011.12948"
+                   class="external-link button is-normal is-rounded is-dark">
+                  <span class="icon">
+                      <i class="fas fa-file-pdf"></i>
+                  </span>
+                  <span>Paper (soon)</span>
+                </a>
+              </span>
+              <span class="link-block">
+                <a href="https://arxiv.org/abs/2011.12948"
+                   class="external-link button is-normal is-rounded is-dark">
+                  <span class="icon">
+                      <i class="ai ai-arxiv"></i>
+                  </span>
+                  <span>arXiv</span>
+                </a>
+              </span>
+              <span class="link-block">
+                <a href="https://github.com/google/nerfies"
+                   class="external-link button is-normal is-rounded is-dark">
+                  <span class="icon">
+                      <i class="fab fa-github"></i>
+                  </span>
+                  <span>Code (soon)</span>
+                  </a>
+              </span>
+              <!-- Dataset Link. -->
+              <span class="link-block">
+                <a href="https://github.com/google/nerfies/releases/tag/0.1"
+                   class="external-link button is-normal is-rounded is-dark">
+                  <span class="icon">
+                      <i class="far fa-images"></i>
+                  </span>
+                  <span>Data (soon)</span>
+                  </a>
+            </div>
+
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="hero teaser">
+  <div class="container is-max-desktop">
+    <div class="hero-body">
+      <img src="./static/images/teaser.jpg" alt="Teaser Image" height="100%">
+      <h2 class="subtitle has-text-centered">
+        <span class="dnerf">ColorPeel</span> learns specific color prompts tailored to user-selected colors.
+      </h2>
+    </div>
+  </div>
+</section>
+
+<!-- <section class="hero is-light is-small">
+  <div class="hero-body">
+    <div class="container">
+      <div id="results-carousel" class="carousel results-carousel">
+        <div class="item item-steve">
+          <video poster="" id="steve" autoplay controls muted loop playsinline height="100%">
+            <source src="./static/videos/steve.mp4"
+                    type="video/mp4">
+          </video>
+        </div>
+        <div class="item item-chair-tp">
+          <video poster="" id="chair-tp" autoplay controls muted loop playsinline height="100%">
+            <source src="./static/videos/chair-tp.mp4"
+                    type="video/mp4">
+          </video>
+        </div>
+        <div class="item item-shiba">
+          <video poster="" id="shiba" autoplay controls muted loop playsinline height="100%">
+            <source src="./static/videos/shiba.mp4"
+                    type="video/mp4">
+          </video>
+        </div>
+        <div class="item item-fullbody">
+          <video poster="" id="fullbody" autoplay controls muted loop playsinline height="100%">
+            <source src="./static/videos/fullbody.mp4"
+                    type="video/mp4">
+          </video>
+        </div>
+        <div class="item item-blueshirt">
+          <video poster="" id="blueshirt" autoplay controls muted loop playsinline height="100%">
+            <source src="./static/videos/blueshirt.mp4"
+                    type="video/mp4">
+          </video>
+        </div>
+        <div class="item item-mask">
+          <video poster="" id="mask" autoplay controls muted loop playsinline height="100%">
+            <source src="./static/videos/mask.mp4"
+                    type="video/mp4">
+          </video>
+        </div>
+        <div class="item item-coffee">
+          <video poster="" id="coffee" autoplay controls muted loop playsinline height="100%">
+            <source src="./static/videos/coffee.mp4"
+                    type="video/mp4">
+          </video>
+        </div>
+        <div class="item item-toby">
+          <video poster="" id="toby" autoplay controls muted loop playsinline height="100%">
+            <source src="./static/videos/toby2.mp4"
+                    type="video/mp4">
+          </video>
+        </div>
+      </div>
+    </div>
+  </div>
+</section> -->
+
+<section class="section">
+  <div class="container is-max-desktop">
+    <!-- Abstract. -->
+    <div class="columns is-centered has-text-centered">
+      <div class="column is-four-fifths">
+        <h2 class="title is-3">Abstract</h2>
+        <div class="content has-text-justified">
+          <p>
+            Text-to-Image (T2I) generation has made significant advancements with the advent of diffusion models. These models exhibit remarkable ability to produce images based on textual prompts. Current T2I models allow users to specify object colors using linguistic color names. However, these labels encompass broad color ranges, making it difficult to achieve precise color matching. To tackle this challenging task, named as <i>color prompt learning</i>, we propose to learn specific color prompts tailored to user-selected colors. These prompts are finally employed to generate objects with the exact desired colors. Observing the existing T2I adaptation approaches cannot achieve satisfactory performance, we propose to generate basic geometric objects in the target color. Leveraging color and shape disentanglement, our method, denoted as <span class="dnerf">ColorPeel</span>, successfully assists the T2I models to <i>peel off</i> the novel color prompts from these colored shapes. In the experiments, we demonstrate the efficacy of <span class="dnerf">ColorPeel</span> in achieving precise color generation with T2I models and generalize <span class="dnerf">ColorPeel</span> to effectively learn abstract attribute concepts, including textures, materials, etc. Our findings provide a valuable step towards improving precision and versatility of T2I models, offering new opportunities for creative applications and design tasks.
+          </p>
+        </div>
+      </div>
+    </div>
+    <!--/ Abstract. -->
+
+    <!-- Paper video. -->
+    <!-- <div class="columns is-centered has-text-centered">
+      <div class="column is-four-fifths">
+        <h2 class="title is-3">Video</h2>
+        <div class="publication-video">
+          <iframe src="https://www.youtube.com/embed/MrKrnHhk8IA?rel=0&amp;showinfo=0"
+                  frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
+        </div>
+      </div>
+    </div> -->
+    <!--/ Paper video. -->
+  </div>
+</section>
+
+<section class="section">
+  <div class="container is-max-desktop">
+    <!-- Method. -->
+    <div class="columns is-centered has-text-centered">
+      <div class="column is-full-width">
+        <h2 class="title is-3">Color Fidelity and Transferability in Stable Diffusion</h2>
+        <div class="content has-text-justified">
+
+        <img src="./static/images/new_baseline_com.jpg" height="100%">
+        <p>
+          Analyzing Color Fidelity and Transferability. (a) Given RGB values (of blue color) in the text prompt, Stable Diffusion fails to generate desired objects in specified colors and also lacks consistency in color fidelity when provided with specific color names. Comparatively, seminal new concept learning methods (b) Textual Inversion and (c) Dreambooth generate text-guided objects in specified colors; however, these are single concept learning baselines and also fail to generate consistent colored objects. (d) Custom Diffusion — multi-concept learning baseline, inter-mixes the colors while also reducing the sample variation, which leads to unintended outcomes.
+        </p>
+      </div>
+      </div>
+    </div>
+    <!--/ Method. -->
+  </div>
+</section>
+
+<section class="section">
+  <div class="container is-max-desktop">
+    <!-- Method. -->
+    <div class="columns is-centered has-text-centered">
+      <div class="column is-full-width">
+        <h2 class="title is-3">Method</h2>
+        <div class="content has-text-justified">
+          <p>
+            we propose to generate a series of geometric shapes with target colors to disentangle (or peel off ) the target colors from the shapes. By jointly learning on multiple color-shape images, we found that the method can successfully disentangle the color and shape concepts.
+          </p>
+        <img src="./static/images/method.jpg" height="100%">
+        <p>
+          Firstly, instance images along with the templates are generated, given the user-provided RGB or color coordinates. Next, we introduce new modifier tokens, i.e., &lt;s&gt; and &lt;c&gt; which correspond to shapes and colors to ensure the disentanglement of shape from color. Following Custom Diffusion, the key and value projection matrices in the diffusion model cross-attention layers are optimized along with the modifier tokens while training. To improve learning, we introduce <i>cross attention alignment</i> to enforce the color and shape cross-attentions.
+        </p>
+      </div>
+      </div>
+    </div>
+    <!--/ Method. -->
+  </div>
+</section>
+
+<section class="section">
+  <div class="container is-max-desktop">
+    <!-- Method. -->
+    <div class="columns is-centered has-text-centered">
+      <div class="column is-full-width">
+        <h2 class="title is-3">Results</h2>
+          <h2 style="margin-bottom: 4px;" class="title is-6"> (i) Color Compositions of ColorPeel</h2>
+          <p style="margin-bottom: 20px;">Qualitative results of ColorPeel in single color and multi-color compositions.</p>
+          <img src="./static/images/cp_results_updated.jpg" height="100%">
+    
+          <h2 style="margin-top: 40px;margin-bottom: 4px;" class="title is-6"> (ii) Generalizability of ColorPeel</h2>
+          <p style="margin-bottom: 20px;">Generalization of ColorPeel to Texture Learning, Material Learning, Color Interpolation, and Image Editing.</p>
+          <img src="./static/images/generalization.jpg" height="100%">
+
+          <h2 style="margin-top: 40px;margin-bottom: 4px;" class="title is-6"> (iii) Human Study</h2>
+          <p style="margin-bottom: 20px;">Thurstone case V results of our user’s study. Values are z-scores. Error bars represent 95% confidence intervals. Our method is statistical significantly better than existing methods — CD, DB, Rich-text, and TI</p>
+          <img src="./static/images/human_study.jpg" width="60%">
+      </div>
+    </div>
+    <!--/ Method. -->
+  </div>
+</section>
+
+<section class="section" id="BibTeX">
+  <div class="container is-max-desktop content">
+    <h2 class="title">BibTeX</h2>
+    <pre><code>@article{butt2024colorpeel,
+  author    = {Butt M. A., Wang K., Corral J. V., and Weijer J. V.,},
+  title     = {ColorPeel: Color Prompt Learning with Diffusion Models via Color and Shape Disentanglement},
+  journal   = {ECCV},
+  year      = {2024},
+}</code></pre>
+  </div>
+</section>
+
+
+<footer class="footer">
+    <div class="columns is-centered">
+          <p>
+            This page was adapted from <a href="https://github.com/nerfies/nerfies.github.io">this</a> source code.
+          </p>
+    </div>
+</footer>
+
+</body>
+</html>
